@@ -2,7 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Saku Arho - CV",
+  title: "Saku Arho - Portfolio",
   description:
     "A page which I try to keep up to date with my recent experience.",
 };
