@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import MuiThemeProvider from "./theme-provider";
 
 export const metadata: Metadata = {
   title: "Saku Arho - Portfolio",
@@ -14,7 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <MuiThemeProvider>{children}</MuiThemeProvider>
+      </body>
     </html>
   );
 }
