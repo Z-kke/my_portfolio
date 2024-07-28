@@ -1,4 +1,15 @@
 export default function Home() {
+  interface GridItemProps {
+    component: React.ElementType;
+    width: number;
+    height: number;
+    [key: string]: any; // Any additional props for the grid.
+  }
+
+  interface DynamicGridProps {
+    items: GridItemProps[];
+  }
+
   return (
     <div className="min-h-screen bg-gray-100">
       <main className="container mx-auto px-4 py-8">
