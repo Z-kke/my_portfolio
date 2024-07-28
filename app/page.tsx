@@ -1,6 +1,5 @@
 import DynamicGrid from "./components/DynamicGrid";
 import { Button, Typography } from "@mui/material";
-import Layout from "./components/Layout";
 
 export default function Home() {
   const items = [
@@ -37,7 +36,7 @@ export default function Home() {
   ];
 
   return (
-    <Layout>
+    <div>
       <main className="container mx-auto px-4 py-8">
         <Typography variant="h3" gutterBottom>
           Saku Arho
@@ -45,6 +44,6 @@ export default function Home() {
       </main>
 
       <DynamicGrid items={items} />
-    </Layout>
+    </div>
   );
 }
