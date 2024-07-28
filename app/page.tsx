@@ -3,7 +3,7 @@ export default function Home() {
     component: React.ElementType;
     width: number;
     height: number;
-    [key: string]: any; // Any additional props for the grid.
+    [key: string]: any; // Any additional props for the item.
   }
 
   interface DynamicGridProps {
