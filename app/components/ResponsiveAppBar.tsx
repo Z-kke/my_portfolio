@@ -64,7 +64,30 @@ function ResponsiveAppBar({ pages, logo = "LOGO" }: Props) {
                   textDecoration: "none",
                 }}
               >
-                {logo}
+                <svg
+                  width="50"
+                  height="50"
+                  viewBox="0 0 100 100"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <polygon
+                    points="50,10 90,25 90,75 50,90 10,75 10,25"
+                    fill="none"
+                    stroke="gold"
+                    stroke-width="4"
+                  />
+                  <text
+                    x="52"
+                    y="55"
+                    dominant-baseline="middle"
+                    text-anchor="middle"
+                    font-family="Arial, Helvetica, sans-serif"
+                    font-size="40"
+                    fill="gold"
+                  >
+                    S
+                  </text>
+                </svg>
               </Typography>
             </Box>
 
