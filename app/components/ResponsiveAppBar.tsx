@@ -13,6 +13,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Slide from "@mui/material/Slide";
+import styles from '../globals.css';
 
 interface Props {
   pages: string[];
@@ -68,26 +69,24 @@ function ResponsiveAppBar({ pages, logo = "LOGO" }: Props) {
                   height="50"
                   viewBox="0 0 100 100"
                   xmlns="http://www.w3.org/2000/svg"
+                  className={styles.logo}
                 >
                   <polygon
-                    points="50,10 90,25 90,75 50,90 10,75 10,25"
-                    fill="none"
-                    stroke="gold"
-                    stroke-width="4"
+                    points="30,5 70,5 95,30 95,70 70,95 30,95 5,70 5,30"
+                    className={styles.octagon}
                   />
                   <text
-                    x="52"
-                    y="55"
+                    x="50%"
+                    y="55%"
                     dominant-baseline="middle"
                     text-anchor="middle"
-                    font-family="Arial, Helvetica, sans-serif"
-                    font-size="40"
-                    fill="gold"
+                    className={styles.logoText}
                   >
                     S
                   </text>
                 </svg>
               </Typography>
+            </Box>
             </Box>
 
             <Box sx={{ display: { xs: "flex", md: "none" } }}>
@@ -121,7 +120,9 @@ function ResponsiveAppBar({ pages, logo = "LOGO" }: Props) {
               >
                 {pages.map((page) => (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
+                    <Typography variant="h1" textAlign="center">
+                      {page}
+                    </Typography>
                   </MenuItem>
                 ))}
               </Menu>
