@@ -40,11 +40,7 @@ export default function Home() {
 
   return (
     <div>
-      <ResponsiveAppBar
-        pages={appbarItems}
-        logo="My Logo"
-        avatarSrc="/path/to/custom/avatar.jpg"
-      />
+      <ResponsiveAppBar pages={appbarItems} logo="My Logo" />
       <main className="container mx-auto px-4 py-8">
         <Typography variant="h1" gutterBottom>
           Saku Arho
