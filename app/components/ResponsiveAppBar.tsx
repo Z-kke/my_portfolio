@@ -33,7 +33,7 @@ function HideOnScroll({ children }: { children: React.ReactElement }) {
   );
 }
 
-function ResponsiveAppBar({ pages, logo = "LOGO" }: Props) {
+function ResponsiveAppBar({ pages }: Props) {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null,
   );
