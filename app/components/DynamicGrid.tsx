@@ -19,10 +19,10 @@ const DynamicGrid: React.FC<DynamicGridProps> = ({ items }) => {
         return (
           <Grid
             item
-            xs={12 / 2} // Divide grid into two columns.
-            sm={12 / 2}
-            md={12 / 2}
-            lg={12 / 2}
+            xs={width}
+            sm={width}
+            md={width}
+            lg={width}
             key={index}
             style={{ gridRowEnd: `span ${height}` }}
           >
