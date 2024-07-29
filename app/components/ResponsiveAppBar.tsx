@@ -47,7 +47,7 @@ function ResponsiveAppBar({ pages, logo = "LOGO" }: Props) {
 
   return (
     <HideOnScroll>
-      <AppBar position="sticky">
+      <AppBar position="sticky" color="primary">
         <Container maxWidth={false} sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
           <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
             <Box sx={{ display: "flex", alignItems: "center" }}>
