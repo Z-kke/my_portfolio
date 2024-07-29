@@ -79,7 +79,7 @@ function ResponsiveAppBar({ pages, logo = "LOGO" }: Props) {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 onClick={handleOpenNavMenu}
-                color="inherit"
+                sx={{ color: "#FF6B3D" }}
               >
                 <MenuIcon />
               </IconButton>
