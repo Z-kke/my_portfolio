@@ -3,7 +3,7 @@ import { Button, Typography } from "@mui/material";
 import ResponsiveAppBar from "./components/ResponsiveAppBar";
 
 export default function Home() {
-  const appbarItems = ["About", "Experience", "Work", "Contact", "Resume"];
+  const appbarItems = ["About", "Experience", "Work", "Contact"];
 
   const items = [
     {
@@ -40,7 +40,7 @@ export default function Home() {
 
   return (
     <div>
-      <ResponsiveAppBar pages={appbarItems} logo="My Logo" />
+      <ResponsiveAppBar pages={appbarItems} />
       <main className="container mx-auto px-4 py-8">
         <Typography variant="h1" gutterBottom>
           Saku Arho
