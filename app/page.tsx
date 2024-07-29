@@ -38,7 +38,7 @@ export default function Home() {
   return (
     <div>
       <main className="container mx-auto px-4 py-8">
-        <Typography variant="h3" gutterBottom>
+        <Typography variant="h1" gutterBottom>
           Saku Arho
         </Typography>
       </main>
