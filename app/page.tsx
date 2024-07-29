@@ -1,7 +1,10 @@
 import DynamicGrid from "./components/DynamicGrid";
 import { Button, Typography } from "@mui/material";
+import ResponsiveAppBar from "./components/ResponsiveAppBar";
 
 export default function Home() {
+  const appbarItems = ["About", "Experience", "Work", "Contact", "Resume"];
+
   const items = [
     {
       component: Button,
@@ -37,6 +40,11 @@ export default function Home() {
 
   return (
     <div>
+      <ResponsiveAppBar
+        pages={appbarItems}
+        logo="My Logo"
+        avatarSrc="/path/to/custom/avatar.jpg"
+      />
       <main className="container mx-auto px-4 py-8">
         <Typography variant="h1" gutterBottom>
           Saku Arho
