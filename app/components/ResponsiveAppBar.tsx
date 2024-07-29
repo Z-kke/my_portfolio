@@ -13,7 +13,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Slide from "@mui/material/Slide";
-import styles from '../globals.css';
+import LogoSvg from "./LogoSvg";
 
 interface Props {
   pages: string[];
@@ -64,29 +64,8 @@ function ResponsiveAppBar({ pages, logo = "LOGO" }: Props) {
                   textDecoration: "none",
                 }}
               >
-                <svg
-                  width="50"
-                  height="50"
-                  viewBox="0 0 100 100"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className={styles.logo}
-                >
-                  <polygon
-                    points="30,5 70,5 95,30 95,70 70,95 30,95 5,70 5,30"
-                    className={styles.octagon}
-                  />
-                  <text
-                    x="50%"
-                    y="55%"
-                    dominant-baseline="middle"
-                    text-anchor="middle"
-                    className={styles.logoText}
-                  >
-                    S
-                  </text>
-                </svg>
+                <LogoSvg />
               </Typography>
-            </Box>
             </Box>
 
             <Box sx={{ display: { xs: "flex", md: "none" } }}>
