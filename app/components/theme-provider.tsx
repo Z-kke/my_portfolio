@@ -25,7 +25,7 @@ const theme = createTheme({
       fontFamily: "monospace",
       fontWeight: 300,
       fontSize: "1.2rem",
-      color: "#2563eb",
+      color: "#ffd700",
     },
     h2: {
       color: "#ccd6f6",
