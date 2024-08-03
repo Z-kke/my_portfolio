@@ -7,31 +7,15 @@ export default function Home() {
 
   const items = [
     {
-      component: Button,
-      width: 6,
-      height: 1,
-      variant: "contained",
-      color: "primary",
-      children: "Button 1",
-    },
-    {
       component: Typography,
-      width: 6,
+      width: 12,
       height: 1,
       variant: "h4",
       children: "Text 1",
     },
     {
-      component: Button,
-      width: 6,
-      height: 2,
-      variant: "contained",
-      color: "secondary",
-      children: "Button 2",
-    },
-    {
       component: Typography,
-      width: 6,
+      width: 12,
       height: 1,
       variant: "h4",
       children: "Text 2",
