@@ -13,7 +13,7 @@ interface DynamicGridProps {
 
 const DynamicGrid: React.FC<DynamicGridProps> = ({ items }) => {
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} direction="column" alignItems="center" justifyContent="center">
       {items.map((item, index) => {
         const { component: Component, width, height, ...props } = item;
         return (
