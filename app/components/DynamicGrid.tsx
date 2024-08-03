@@ -1,4 +1,5 @@
 import Grid from "@mui/material/Grid";
+import { Box } from "@mui/material";
 
 interface GridItemProps {
   component: React.ElementType;
@@ -13,18 +14,18 @@ interface DynamicGridProps {
 
 const DynamicGrid: React.FC<DynamicGridProps> = ({ items }) => {
   return (
-    <Grid container spacing={2} direction="column" alignItems="center" justifyContent="center">
+    <Grid container spacing={2} justifyContent="center">
       {items.map((item, index) => {
         const { component: Component, width, height, ...props } = item;
         return (
           <Grid
             item
-            xs={width}
+            xs={12}
             sm={width}
             md={width}
             lg={width}
             key={index}
-            style={{ gridRowEnd: `span ${height}` }}
+            style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', gridRowEnd: `span ${height}` }}
           >
             <Component {...props} />
           </Grid>
@@ -35,3 +36,4 @@ const DynamicGrid: React.FC<DynamicGridProps> = ({ items }) => {
 };
 
 export default DynamicGrid;
+

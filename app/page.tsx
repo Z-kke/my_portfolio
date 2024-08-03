@@ -15,7 +15,14 @@ export default function Home() {
     },
     {
       component: Typography,
-      width: 12,
+      width: 6,
+      height: 1,
+      variant: "h4",
+      children: "Text 2",
+    },
+    {
+      component: Typography,
+      width: 4,
       height: 1,
       variant: "h4",
       children: "Text 2",
