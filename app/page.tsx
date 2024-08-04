@@ -1,32 +1,28 @@
 import DynamicGrid from "./components/DynamicGrid";
-import { Typography } from "@mui/material";
 import ResponsiveAppBar from "./components/ResponsiveAppBar";
-import Introduction from "./components/Introduction";
-import About from "./components/AboutMe";
-import Work from "./components/Work";
-import Contact from "./components/Contact";
 
 export default function Home() {
   const appbarItems = ["About", "Experience", "Work", "Contact"];
 
   const items = [
     {
-      component: Introduction,
+      component: "Introduction",
+
       width: 12,
       height: 1,
     },
     {
-      component: About,
+      component: "AboutMe",
       width: 12,
       height: 1,
     },
     {
-      component: Work,
+      component: "Work",
       width: 12,
       height: 1,
     },
     {
-      component: Contact,
+      component: "Contact",
       width: 12,
       height: 1,
     },

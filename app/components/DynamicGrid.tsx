@@ -1,11 +1,11 @@
-import Grid from "@mui/material/Grid";
+"use client";
+
+import React, { useRef, useEffect, useState } from "react";
 import { Box } from "@mui/material";
 
 interface GridItemProps {
-  component: React.ElementType;
-  width: number;
-  height: number;
-  [key: string]: any; // Any additional props for the grid item.
+  component: string; // Change this to string
+  [key: string]: any;
 }
 
 interface DynamicGridProps {
@@ -13,27 +13,77 @@ interface DynamicGridProps {
 }
 
 const DynamicGrid: React.FC<DynamicGridProps> = ({ items }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const index = parseInt(
+            entry.target.getAttribute("data-index") || "0",
+            10,
+          );
+          setCurrentIndex(index);
+        }
+      });
+    }, options);
+
+    const container = containerRef.current;
+    if (container) {
+      Array.from(container.children).forEach((child) => {
+        observer.observe(child);
+      });
+    }
+
+    return () => {
+      if (container) {
+        Array.from(container.children).forEach((child) => {
+          observer.unobserve(child);
+        });
+      }
+    };
+  }, []);
+
   return (
-    <Grid container spacing={2} justifyContent="center">
+    <Box
+      ref={containerRef}
+      sx={{
+        height: "100vh",
+        overflowY: "scroll",
+        scrollSnapType: "y mandatory",
+      }}
+    >
       {items.map((item, index) => {
-        const { component: Component, width, height, ...props } = item;
+        const { component, ...props } = item;
+        const Component = React.lazy(() => import(`./${component}`));
         return (
-          <Grid
-            item
-            xs={12}
-            sm={width}
-            md={width}
-            lg={width}
+          <Box
             key={index}
-            style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', gridRowEnd: `span ${height}` }}
+            data-index={index}
+            sx={{
+              height: "100vh",
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              scrollSnapAlign: "start",
+            }}
           >
-            <Component {...props} />
-          </Grid>
+            <React.Suspense fallback={<div>Loading...</div>}>
+              <Component {...props} />
+            </React.Suspense>
+          </Box>
         );
       })}
-    </Grid>
+    </Box>
   );
 };
 
 export default DynamicGrid;
-
