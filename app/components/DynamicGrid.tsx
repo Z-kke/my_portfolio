@@ -15,6 +15,7 @@ interface DynamicGridProps {
 const DynamicGrid: React.FC<DynamicGridProps> = ({ items }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  const appBarHeight = 64;
 
   useEffect(() => {
     const options = {
@@ -55,9 +56,10 @@ const DynamicGrid: React.FC<DynamicGridProps> = ({ items }) => {
     <Box
       ref={containerRef}
       sx={{
-        height: "100vh",
+        height: `calc(100vh - ${appBarHeight}px)`,
         overflowY: "scroll",
         scrollSnapType: "y mandatory",
+        marginTop: `${appBarHeight}px`,
       }}
     >
       {items.map((item, index) => {
@@ -68,7 +70,7 @@ const DynamicGrid: React.FC<DynamicGridProps> = ({ items }) => {
             key={index}
             data-index={index}
             sx={{
-              height: "100vh",
+              height: `calc(100vh - ${appBarHeight}px)`,
               width: "100%",
               display: "flex",
               justifyContent: "center",
