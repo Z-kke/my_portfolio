@@ -7,7 +7,6 @@ export default function Home() {
   const items = [
     {
       component: "Introduction",
-
       width: 12,
       height: 1,
     },
