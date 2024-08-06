@@ -17,7 +17,7 @@ export default function Introduction() {
         <Typography variant="h1" gutterBottom>
           Hi, my name is
         </Typography>
-        <Typography my={0} variant="h2" gutterBottom>
+        <Typography my={0} variant="h3" gutterBottom>
           Saku Arho
         </Typography>
         <Box
