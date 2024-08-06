@@ -1,4 +1,5 @@
 import { Typography, Box, Slide } from "@mui/material";
+import Typewriter from "typewriter-effect";
 
 export default function Introduction() {
   return (
@@ -19,13 +20,28 @@ export default function Introduction() {
         <Typography my={0} variant="h2" gutterBottom>
           Saku Arho
         </Typography>
-        <Typography variant="h3" gutterBottom>
-          I build things for the web.
-        </Typography>
-        <Typography variant="body1">
-          I'm a software engineer specializing in building and designing great
-          digital experiences.
-        </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            fontFamily: "monospace",
+            color: "#FF6B3D",
+            backgroundColor: "black",
+            padding: 1,
+          }}
+        >
+          I am&nbsp;
+          <Typewriter
+            options={{
+              strings: ["a software engineer.", "a full-stack developer."],
+              autoStart: true,
+              loop: true,
+              delay: 50,
+              deleteSpeed: 30,
+            }}
+          />
+        </Box>
       </Box>
     </Slide>
   );
