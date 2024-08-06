@@ -27,8 +27,10 @@ export default function Introduction() {
             alignItems: "center",
             fontFamily: "monospace",
             color: "#FF6B3D",
-            backgroundColor: "black",
+            my: 2,
             padding: 1,
+            border: 1,
+            borderRadius: 3,
           }}
         >
           I am&nbsp;
