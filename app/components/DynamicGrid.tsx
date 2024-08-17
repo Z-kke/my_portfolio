@@ -85,7 +85,6 @@ const DynamicGrid: React.FC<DynamicGridProps> = ({ items }) => {
             display: "flex",
             justifyContent: "center",
             alignItems: "flex-start",
-            paddingTop: "30vh",
             scrollSnapAlign: "start",
           }}
         >
